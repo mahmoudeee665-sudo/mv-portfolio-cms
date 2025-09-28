@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profile_skills",
+  "info": {
+    "singularName": "profile-skill",
+    "pluralName": "profile-skills",
+    "displayName": "Profile Skill"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "skill": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::skill.skill"
+    },
+    "level": {
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "max": 100
+    },
+    "developer_profile": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::developer-profile.developer-profile",
+      "inversedBy": "profile_skills"
+    }
+  }
+}

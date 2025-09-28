@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_hero_sections",
+  "info": {
+    "displayName": "HeroSection"
+  },
+  "options": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string"
+    },
+    "heroSubtitle": {
+      "type": "string"
+    },
+    "heroDescription": {
+      "type": "text"
+    },
+    "heroDesign": {
+      "type": "enumeration",
+      "enum": [
+        "magic_ball",
+        "robot"
+      ]
+    }
+  },
+  "config": {}
+}

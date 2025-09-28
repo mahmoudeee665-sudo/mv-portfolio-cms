@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "developer_profiles",
+  "info": {
+    "singularName": "developer-profile",
+    "pluralName": "developer-profiles",
+    "displayName": "developer-profile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "YourName": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "YourName",
+      "required": true
+    },
+    "headline": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "contactEmail": {
+      "type": "email",
+      "required": false
+    },
+    "socials": {
+      "type": "component",
+      "component": "shared.social-link",
+      "repeatable": true
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "Herosection": {
+      "type": "component",
+      "component": "shared.hero-section",
+      "repeatable": true
+    },
+    "About": {
+      "type": "component",
+      "component": "shared.about",
+      "repeatable": false
+    },
+    "projects": {
+      "type": "component",
+      "component": "shared.project",
+      "repeatable": true
+    },
+    "profile_skills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::profile-skill.profile-skill",
+      "mappedBy": "developer_profile"
+    }
+  }
+}
